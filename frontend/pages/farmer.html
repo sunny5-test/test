@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/farmer.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="../assets/images/Agochain_logo.png" alt="AgroChain Logo">
+                <h3>AgroChain</h3>
+            </div>
+            <nav class="nav-menu">
+                <a href="#overview" class="nav-item active" data-section="overview">Overview</a>
+                <a href="#products" class="nav-item" data-section="products">Products</a>
+                <a href="#profile" class="nav-item" data-section="profile">Profile</a>
+            </nav>
+            <div class="profile-summary" id="profileSummary">
+                </div>
+            <button id="signoutBtn" class="signout-btn">Sign Out</button>
+        </aside>
+
+        <main class="main-content">
+            <div id="overview" class="dashboard-section active">
+                <h2>Overview</h2>
+                <div class="metrics-grid" id="overviewMetrics">
+                    </div>
+                <div class="dashboard-card recent-sales-card">
+                    <h3>Recent Sales</h3>
+                    <div id="recentSalesList" class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Dealer</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="dashboard-card most-frequent-dealer-card">
+                    <h3>Most Frequent Buyers</h3>
+                    <div id="frequentBuyersList" class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Dealer Name</th>
+                                    <th>Total Orders</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="products" class="dashboard-section">
+                <h2>Products</h2>
+                <div class="dashboard-card add-product-card">
+                    <h3>Add New Product</h3>
+                    <form id="addProductForm">
+                        <label for="productName">Product Name</label>
+                        <input type="text" id="productName" required>
+
+                        <label for="productImage">Product Image (Optional)</label>
+                        <input type="file" id="productImage" accept="image/*">
+
+                        <label for="productPrice">Price (per unit)</label>
+                        <input type="number" id="productPrice" step="0.01" required>
+
+                        <label for="productQuantity">Quantity</label>
+                        <input type="number" id="productQuantity" required>
+
+                        <label for="productUnit">Unit</label>
+                        <select id="productUnit" required>
+                            <option value="kg">kg</option>
+                            <option value="ton">ton</option>
+                        </select>
+                        <button type="submit">Add Product</button>
+                    </form>
+                    <div id="addProductStatus" class="message"></div>
+                </div>
+
+                <div class="dashboard-card product-list-card">
+                    <h3>Your Products</h3>
+                    <div id="productsList" class="product-grid">
+                        </div>
+                </div>
+            </div>
+
+            <div id="profile" class="dashboard-section">
+                <h2>My Profile</h2>
+                <div class="dashboard-card profile-details-card">
+                    <form id="profileForm">
+                        <label for="profileFirstName">First Name</label>
+                        <input type="text" id="profileFirstName" required>
+
+                        <label for="profileLastName">Last Name</label>
+                        <input type="text" id="profileLastName">
+
+                        <label for="profileEmail">Email</label>
+                        <input type="email" id="profileEmail" disabled>
+
+                        <label for="profileMobile">Mobile</label>
+                        <input type="text" id="profileMobile">
+
+                        <label for="profileAadhaar">Aadhaar (12 digits)</label>
+                        <input type="text" id="profileAadhaar">
+
+                        <label for="profileFarmLocation">Farm Location</label>
+                        <input type="text" id="profileFarmLocation">
+
+                        <label for="profileCropsGrown">Crops Grown (comma separated)</label>
+                        <input type="text" id="profileCropsGrown">
+                        
+                        <button type="submit">Update Profile</button>
+                    </form>
+                    <div id="profileStatus" class="message"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../assets/js/farmer.js"></script>
+</body>
+</html>
